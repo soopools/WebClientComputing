@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>lab1.html</title>
+  <link rel="stylesheet" href="css/order.css">
+  <style>
+    #container {
+      margin-left: 0;
+    }
+    #studentInformation li label::before {
+      content: "•";
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    #product li label::before {
+      content: "•";
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid rgb(194, 192, 192);
+      padding: 5px;
+    }
+
+    /* 공지사항에 배경 이미지 추가 */
+    #notice-container {
+      display: none;
+      background-image: url('/Users/jiyoung/Desktop/univ/2024-1/Web Client Computing/lab1/notice.jpg');
+      background-size: cover;
+      padding: 20px; /* 배경 이미지가 표시되도록 컨테이너 크기 설정 */
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>배정시간표 작성하기</h2>
+  <table>
+    <caption>자바스크립트 프로그래밍 헬퍼 배정시간</caption>
+    <colgroup>
+      <col style="background-color:#eee;">
+      <col>
+      <col span="2" style="width:150px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>요일/시간</th>
+        <th>2-3교시</th>
+        <th>4-5교시</th>
+        <th>6-7교시</th>
+        <th>8-9교시</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">월-화요일</td>
+        <td colspan="2">윤선영</td>
+        <td rowspan="2">홍길동</td>
+        <td rowspan="5">
+          <video id="selectedVideo" controls width="250" controls height="140"></video>
+          <br>
+          <input type="file" id="fileInput" onchange="loadVideo()">
+          </br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">박영수</td>
+      </tr>
+      <tr>
+        <td rowspan="2">수-목요일</td>
+        <td rowspan="2">한나라</td>
+        <td rowspan="2">민영식</td>
+        <td>박영수</td>
+      </tr>
+      <tr>
+        <td>윤선영</td>
+      </tr>
+      <tr>
+        <td>금요일</td>
+        <td colspan="3">김철수</td>
+      </tr>
+    </tbody>        
+  </table>
+
+  <div id="container">
+    <h2>수강과목 신청하기</h2>
+    <form id="myForm">
+      <fieldset>
+        <legend><span style="font-weight:normal;">수강 과목 선택</span></legend>
+        <p><b>웹클라이언트 컴퓨팅 분반 선택</b></p>
+        <ul id="product">   
+          <li><label><input type="radio" name="class" value="class01">1분반</label></li>
+          <li><label><input type="radio" name="class" value="class02">2분반</label></li>
+          <li><label><input type="radio" name="class" value="class03">3분반</label></li>
+        </ul>    
+      </fieldset>
+
+      <fieldset>
+        <legend><span style="font-weight:normal;">학생 정보</span></legend>
+        <ul id="studentInformation">
+          <li>
+            <label for="user-name"><span style="font-weight:normal;">이름 </span></label>
+            <input type="text" id="user-name" required>
+          </li>
+          <li>
+            <label for="mail"><span style="font-weight:normal;">이메일</span></label>
+            <input type="email" id="mail" required>
+          </li>        
+          <li>
+            <label for="phone">연락처</label>
+            <input type="tel" id="phone" required>
+          </li>
+          <li>
+            <label for="d-day">신청일시</label>
+            <input type="datetime-local" id="d-day" required>
+          </li>     
+          <li>
+            <label for="memo">메모</label>
+            <textarea id="memo" cols="40" rows="4"></textarea>
+          </li>   
+        </ul>  
+      </fieldset>
+    </form>
+
+      <div>
+        <input type="submit" class="button" value="신청하기" onclick="submitForm()"> 
+        <input type="submit" class="button" value="취소하기" onclick="cancelSubmission()">
+        <input type='button' value="공지사항 보기/지우기" onclick="show()">
+        <div id="notice-container">
+          <h1>공지사항</h1>
+          <br><p><h3>매주 실습 진행</h3></p><br>
+          <p><h3>8주차(화) 중간고사</h3></p>
+        </div>
+        <script>
+          function submitForm() {
+            if (document.getElementById("user-name").value == '' ||
+                document.getElementById("mail").value == '' ||
+                document.getElementById("phone").value == '') {
+              alert("정보를 입력하세요.");
+            } else {
+              alert("신청이 완료되었습니다.");
+              document.getElementById("myForm").reset(); // 입력한 정보 초기화
+            }
+          }
+
+          function cancelSubmission() {
+            document.getElementById("myForm").reset();
+          }
+
+          function show() {
+            var noticeContainer = document.getElementById('notice-container');
+            if (noticeContainer.style.display === 'none') {
+              noticeContainer.style.display = 'block';
+            } else {
+              noticeContainer.style.display = 'none';
+            }
+          }
+
+          function loadVideo() {
+            const fileInput = document.getElementById('fileInput');
+            const video = document.getElementById('selectedVideo');
+            const file = fileInput.files[0];
+            const url = URL.createObjectURL(file);
+            video.src = url;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

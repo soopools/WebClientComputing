@@ -1,0 +1,17 @@
+<img src="balloon" /> 어쩌구 ..
+balloon or onair..png
+
+icon.onmouseleave = function() {
+    icon.src = "images/ballon,png"
+}
+
+icon.onmouseenter = function() {
+    icon.src = "images/ballon,png"
+}
+
+바디
+스크립트
+함수
+스크립트
+바디
+html

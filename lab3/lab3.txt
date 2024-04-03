@@ -1,0 +1,42 @@
+(실습3) CSS(script, float, clear, background, background-position, background-color, background-size) 실습
+------------------------------------------------------------------------------------------------------------------
+
+다음 프로그램들을 참조하여, 완성프로그램들(lab3-final.html, lab3-reporter-final.html)을 실행하였을 때 
+브라우저화면이 다음 4개 이미지 파일("initial image.png", 
+"image when 4th menu button is clicked.png",
+"image when mouse pointer moves into the balloon image.png", 
+"image when mouse pointer moves out of the onair image.png")과 같은 결과가 브라우저에 출력되도록, 
+
+제공 프로그램(lab3.html, lab3-reporter.html)을 
+제출 프로그램(lab3-final.html, lab3-reporter-final.html)으로 
+
+복사한 다음, 아래 예제 프로그램들을 참고하여, CSS/Javascript 기능을 (추가&변경)->(완성)->(제출)하라.
+
+
+마우스가 이미지 영역을 들어가거나 빠져나올 때 이미지를 각각 "onair.png"와 "balloon.png"로 바꾸는 기능 구현은
+방법은 2가지가 있다. 
+
+첫째 방법은 <img> 태그를 사용하여 마우스가 이미지 영역을 들어가거나 빠져나올 때 발생하는 2개 이벤트(onmouseenter, onmouseleave) 처리 메소드 안에서 <img> 태그의 src 어트리뷰트 값으로 각각 이미지 파일 문자열 "onair.png", "balloon.png"을 설정하며, 
+
+두번째 방법은 css 가상 선택자 중 :hover를 사용하여 구현한다. 
+
+첫번째 방법을 사용하면 다양한 세부 기능을 구현할 수 있으나 구현이 복잡하며,
+
+두번째 방법은 간단하나 동적인 추가 기능이 요구될 때 어차피 자바스크립트를 사용해야 하는 단점이 있다.
+본 실습에서는 두가지 방법 중 하나를 선택하여 구현한다.
+
+  (제공파일(lab3.zip) 탬플릿 소스)
+     lab3.html, lab3-reporter.html
+
+  (예제 프로그램)
+    - article-section.html, article-section-final.html   
+         //  4개의 <article> 태그들을 "float" 속성으로 수평-수직 출력
+    - menu-link.html, menu-link-final.html
+         //  <nav> 태그 안에 있는 4개 <li> 태그들을 "float" 속성으로 수평 출력
+
+
+    - position.html
+         //  화면에 있는 링크를 클릭하면, 신규 브라우저에서 "lab3-reporter.html"이 실행된다.
+         
+    - bg-3.html, bg-4.html
+         //  4개 이미지 속성(background,background-image,background-position,background-size) 사용예제

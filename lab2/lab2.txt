@@ -1,0 +1,34 @@
+(실습2) 
+
+CSS((style), font, color, margin, text-align, display, font-family, list-style, border-radius, background-color)
+-----------------------------------------------------------------------------------------------------------
+
+다음 프로그램들을 참조하여, 완성프로그램(lab2-final.html)을 실행하였을 때 첨부파일 이미지(lab2-result.png)와 같은 결과가 브라우저에 출력되도록, 
+
+1.
+제공 프로그램(lab2-temp.html, css/lab2-temp.css)을 
+제출 프로그램(lab2-final.html, css/lab2-final.css)으로 복사한 다음, 
+
+2.
+기능 (추가&변경)->(완성)->(제출)하라.
+
+  - 제공폴더(lab2.zip)내 자료
+       lab2-temp.html, css/lab2-temp.css   // 템플릿 소스코드
+
+      // 실습압축파일(lab2.zip) 안에 있는 다음 파일들은 
+      // (실습2)를 완성하는데 참조되도록 교재원본파일 내용일부를
+      // 수정한 버전임 
+
+       border-7.html                     // border boundary 모서리 라운딩 방법
+       gfont-result.html                 // 폰트 변경 방법
+       list1.html                        // <ol> 태그 넘버링 옵션 변경 방법
+       margin-3.html                     // border boundary 선 두께, 색깔 변경 참조
+
+       position-3.html                   // "tree.png" 이미지를 절대좌표계로 임의의 공간에 그리는 방법
+
+       
+       sol-4.html                        // "확인하세요" 문자열을 <div> 태그 처음에 바 형태로 넣는 방법
+                                         // <div> 태그 안의 내용을 가운데 맞춤, 색깔 변경하는 방법
+
+       table-css2.html                   // <table> boundary 선 두께, 색깔 설정, <caption> 위치 변경
+                                         //  셀 가운데 맞춤 
